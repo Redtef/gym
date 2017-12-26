@@ -1,19 +1,10 @@
 package gym.Controllers;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTreeTableView;
-import gym.database.DAOMembership;
-import gym.model.Membership;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TreeTableColumn;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
@@ -87,7 +78,7 @@ public class MainController implements Initializable {
         try {
             membership_pane.setStyle("-fx-background-color:#222831");
             main_content.getChildren().clear();
-            main_content.getChildren().add(FXMLLoader.load(getClass().getResource("/membership.fxml")));
+            main_content.getChildren().add(FXMLLoader.load(getClass().getResource("/Membership/membership.fxml")));
         } catch (IOException e) {
             e.printStackTrace();
         }

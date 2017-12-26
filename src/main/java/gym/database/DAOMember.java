@@ -26,7 +26,7 @@ public class DAOMember implements DAO<Member> {
     }
 
     @Override
-    public void update(int id) {
+    public void update(Member value) {
 
     }
 

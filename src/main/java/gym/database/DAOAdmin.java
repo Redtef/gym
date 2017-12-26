@@ -55,7 +55,7 @@ public  class  DAOAdmin implements DAO<Admin> {
     }
 
     @Override
-    public void update(int id) {
+    public void update(Admin value) {
 
     }
 

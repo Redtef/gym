@@ -32,6 +32,7 @@ public class WindowUtil {
             }
             stage.setTitle(title);
             stage.initModality(Modality.APPLICATION_MODAL);
+
             stage.setScene(new Scene(parent));
             stage.setResizable(false);
 

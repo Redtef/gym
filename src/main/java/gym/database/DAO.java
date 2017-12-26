@@ -8,7 +8,7 @@ public  interface DAO<T> {
     T findByName(String name);
     ArrayList<T> findAll();
     void insert(T value);
-    void update(int id);
+    void update(T value);
     void delete(int id);
 
 }

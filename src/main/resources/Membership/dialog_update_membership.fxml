@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="348.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gym.Controllers.Membership.DialogUpdateMembership">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="276.0" prefWidth="600.0">
+               <children>
+                  <AnchorPane>
+                     <children>
+                        <JFXTextField fx:id="name" maxHeight="45.0" minHeight="45.0" prefHeight="45.0" prefWidth="600.0" promptText="Membership Name">
+                           <padding>
+                              <Insets left="150.0" right="150.0" />
+                           </padding>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </AnchorPane>
+                  <AnchorPane>
+                     <children>
+                        <JFXTextField fx:id="weeks" maxHeight="45.0" minHeight="45.0" prefHeight="45.0" prefWidth="600.0" promptText="Number of Weeks">
+                           <padding>
+                              <Insets left="150.0" right="150.0" />
+                           </padding>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </AnchorPane>
+                  <AnchorPane maxHeight="50.0" minHeight="50.0" prefHeight="50.0">
+                     <children>
+                        <JFXTextField fx:id="days" maxHeight="45.0" minHeight="45.0" prefHeight="45.0" prefWidth="600.0" promptText="Number Of Days Per Week">
+                           <padding>
+                              <Insets left="150.0" right="150.0" />
+                           </padding>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </AnchorPane>
+                  <AnchorPane layoutX="10.0" layoutY="185.0">
+                     <children>
+                        <JFXTextField fx:id="price" maxHeight="45.0" minHeight="45.0" prefHeight="45.0" prefWidth="600.0" promptText="Membership Price">
+                           <padding>
+                              <Insets left="150.0" right="150.0" />
+                           </padding>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="20.0" />
+                     </VBox.margin>
+                  </AnchorPane>
+                  <AnchorPane layoutX="10.0" layoutY="30.0">
+                     <padding>
+                        <Insets top="1.0" />
+                     </padding>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <HBox prefHeight="70.0" prefWidth="600.0">
+               <children>
+                  <JFXButton fx:id="save" alignment="CENTER" mnemonicParsing="false" onAction="#save" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #3F72AF;" text="Save">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="50.0" top="10.0" />
+                     </HBox.margin></JFXButton>
+                  <Pane prefHeight="200.0" prefWidth="167.0" />
+                  <JFXButton fx:id="cancel" alignment="CENTER" contentDisplay="CENTER" layoutX="60.0" layoutY="20.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #3F72AF;" text="Cancel">
+                     <HBox.margin>
+                        <Insets bottom="10.0" right="50.0" top="10.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

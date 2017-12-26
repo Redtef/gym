@@ -22,7 +22,7 @@ public class DAOMembership implements DAO<Membership> {
     public ArrayList<Membership> findAll() {
         ArrayList<Membership> memberships = new ArrayList<>();
         try (Statement statement = DBSingleton.getInstance().getConnection().createStatement();
-             ResultSet rs = statement.executeQuery("SELECT * FROM MEMBERSHIP ")) {
+             ResultSet rs = statement.executeQuery("SELECT * FROM MEMBERSHIP ORDER BY ID")) {
 
             while (rs.next()) {
 
@@ -37,16 +37,19 @@ public class DAOMembership implements DAO<Membership> {
 
     @Override
     public void insert(Membership value) {
+        System.out.println("added");
 
     }
 
     @Override
-    public void update(int id) {
+    public void update(Membership value) {
+        System.out.println("updated");
 
     }
 
     @Override
     public void delete(int id) {
+        System.out.println("deleted where id ="+id);
 
     }
 }
