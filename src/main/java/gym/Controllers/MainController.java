@@ -1,6 +1,7 @@
 package gym.Controllers;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -36,6 +37,8 @@ public class MainController implements Initializable {
 
     @FXML
     private AnchorPane booking_pane;
+    @FXML
+    private AnchorPane ban_pane;
 
     @FXML
     private JFXButton booking_button;
@@ -53,41 +56,110 @@ public class MainController implements Initializable {
 
     @FXML
     private Color x4;
-
+    String c1 = " #444F5A";
+    String c2 = "#222831";
 
     @FXML
     private AnchorPane main_content;
+
     @FXML
     void setBookingView(ActionEvent event) {
 
-    }
-
-    @FXML
-    void setHomeView(ActionEvent event) {
-
-    }
-
-    @FXML
-    void setMembersView(ActionEvent event) {
-
-    }
-
-    @FXML
-    void setMembershipView(ActionEvent event) {
-
         try {
-            membership_pane.setStyle("-fx-background-color:#222831");
+            ban_pane.setStyle("-fx-background-color:"+c1);
+
+            membership_pane.setStyle("-fx-background-color:" + c1);
+            members_pane.setStyle("-fx-background-color:" + c1);
+            home_pane.setStyle("-fx-background-color:" + c1);
+            booking_pane.setStyle("-fx-background-color:" + c2);
+
             main_content.getChildren().clear();
-            main_content.getChildren().add(FXMLLoader.load(getClass().getResource("/Membership/membership.fxml")));
+            main_content.getChildren().add(FXMLLoader.load(getClass().getResource("/booking.fxml")));
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
 
+    @FXML
+    void setHomeView(ActionEvent event) {
+        try {
+            ban_pane.setStyle("-fx-background-color:"+c1);
+
+            membership_pane.setStyle("-fx-background-color:" + c1);
+            members_pane.setStyle("-fx-background-color:" + c1);
+            home_pane.setStyle("-fx-background-color:" + c2);
+            booking_pane.setStyle("-fx-background-color:" + c1);
+            main_content.getChildren().clear();
+            main_content.getChildren().add(FXMLLoader.load(getClass().getResource("/main_content.fxml")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void setMembersView(ActionEvent event) {
+        try {
+            ban_pane.setStyle("-fx-background-color:"+c1);
+            membership_pane.setStyle("-fx-background-color:"+c1);
+            members_pane.setStyle("-fx-background-color:"+c2);
+            home_pane.setStyle("-fx-background-color:"+c1);
+            booking_pane.setStyle("-fx-background-color:"+c1);
+            main_content.getChildren().clear();
+            main_content.getChildren().add(FXMLLoader.load(getClass().getResource("/members_content.fxml")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void exit(ActionEvent event) {
+
+        Platform.exit();
+        System.exit(0);
+
+    }
+    @FXML
+    void ban(ActionEvent event) {
+
+        try {
+            ban_pane.setStyle("-fx-background-color:"+c2);
+            membership_pane.setStyle("-fx-background-color:"+c1);
+            members_pane.setStyle("-fx-background-color:"+c1);
+            home_pane.setStyle("-fx-background-color:"+c1);
+            booking_pane.setStyle("-fx-background-color:"+c1);
+            main_content.getChildren().clear();
+            main_content.getChildren().add(FXMLLoader.load(getClass().getResource("/baned_members_content.fxml")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+    @FXML
+    void setMembershipView(ActionEvent event) {
+
+        try {
+            ban_pane.setStyle("-fx-background-color:"+c1);
+            membership_pane.setStyle("-fx-background-color:"+c2);
+            members_pane.setStyle("-fx-background-color:"+c1);
+            home_pane.setStyle("-fx-background-color:"+c1);
+            booking_pane.setStyle("-fx-background-color:"+c1);
+            main_content.getChildren().clear();
+            main_content.getChildren().add(FXMLLoader.load(getClass().getResource("/membership.fxml")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-
+        try {
+            //membership_pane.setStyle("-fx-background-color:#222831");
+            main_content.getChildren().clear();
+            main_content.getChildren().add(FXMLLoader.load(getClass().getResource("/main_content.fxml")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

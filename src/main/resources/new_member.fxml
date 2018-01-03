@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="newmemberwindow" prefHeight="440.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gym.Controllers.members.NewMemberController">
+   <children>
+      <VBox prefHeight="399.0" prefWidth="400.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXTextField fx:id="txname" promptText="Full Name">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="15.0" left="50.0" right="50.0" top="15.0" />
+               </padding></JFXTextField>
+            <JFXTextField fx:id="txphone" layoutX="10.0" layoutY="10.0" promptText="Phone Number">
+               <padding>
+                  <Insets bottom="15.0" left="50.0" right="50.0" top="15.0" />
+               </padding>
+            </JFXTextField>
+            <JFXTextField fx:id="txcin" layoutX="10.0" layoutY="10.0" promptText="CIN">
+               <padding>
+                  <Insets bottom="15.0" left="50.0" right="50.0" top="15.0" />
+               </padding></JFXTextField>
+            <JFXDatePicker fx:id="birthdate" prefHeight="25.0" prefWidth="407.0" promptText="Birth Date">
+               <padding>
+                  <Insets bottom="15.0" left="50.0" right="50.0" top="15.0" />
+               </padding>
+            </JFXDatePicker>
+            <HBox>
+               <children>
+                  <JFXCheckBox fx:id="handicap" mnemonicParsing="false" text="Handicap">
+                     <HBox.margin>
+                        <Insets left="150.0" right="50.0" />
+                     </HBox.margin>
+                  </JFXCheckBox>
+               </children>
+            </HBox>
+            <HBox />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="imgview" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@avatars/athlete.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="avatarbu" mnemonicParsing="false" onAction="#setAvatar" prefHeight="100.0" prefWidth="405.0" text="Set Avatar">
+                     <HBox.margin>
+                        <Insets bottom="55.0" left="30.0" right="30.0" top="55.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <JFXButton layoutX="110.0" layoutY="209.0" mnemonicParsing="false" onAction="#insertnewuser" prefHeight="50.0" prefWidth="405.0" text="Add The New Member">
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" top="10.0" />
+               </VBox.margin></JFXButton>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

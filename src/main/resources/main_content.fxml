@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gym.Controllers.MainContentController">
+    <BorderPane prefHeight="600.0" prefWidth="809.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <top>
+         <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+               <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="114.0" prefWidth="826.0" text="Statistics ">
+                  <font>
+                     <Font name="System Bold" size="32.0" />
+                  </font>
+               </Label>
+            </children>
+         </HBox>
+      </top>
+      <center>
+         <PieChart fx:id="users_membership" prefHeight="150.0" prefWidth="380.0" title="Members By Membership" BorderPane.alignment="CENTER" />
+      </center>
+      <right>
+         <PieChart fx:id="members" prefHeight="150.0" prefWidth="419.0" title="Members" BorderPane.alignment="CENTER" />
+      </right>
+      <bottom>
+         <LineChart prefHeight="222.0" prefWidth="809.0" title="Attendance" BorderPane.alignment="CENTER">
+           <xAxis>
+             <CategoryAxis side="BOTTOM" />
+           </xAxis>
+           <yAxis>
+             <NumberAxis side="LEFT" />
+           </yAxis>
+         </LineChart>
+      </bottom>
+    </BorderPane>
+</AnchorPane>

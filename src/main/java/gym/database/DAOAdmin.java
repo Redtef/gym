@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public  class  DAOAdmin implements DAO<Admin> {
+public class DAOAdmin implements DAO<Admin> {
     @Override
     public Admin findById(int id) {
         Admin admin = null;
@@ -27,16 +27,17 @@ public  class  DAOAdmin implements DAO<Admin> {
     }
 
     @Override
-    public Admin findByName(String name) {
-        Admin admin = null;
+    public ArrayList<Admin> findByName(String name) {
+        ArrayList<Admin> admin = null;
         try (Statement statement = DBSingleton.getInstance().getConnection().createStatement();
              ResultSet rs = statement.executeQuery("SELECT * FROM ADMIN ")) {
 
             while (rs.next()) {
 
-                admin = new Admin(
+                admin.add(new Admin(
                         rs.getString("username"),
-                        rs.getString("password"));
+                        rs.getString("password"))
+                );
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -46,6 +47,11 @@ public  class  DAOAdmin implements DAO<Admin> {
 
     @Override
     public ArrayList<Admin> findAll() {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Admin> findAllWhere(String col, String comp, String val) {
         return null;
     }
 

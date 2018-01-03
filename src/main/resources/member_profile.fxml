@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gym.Controllers.members.MemberProfileController">
+   <children>
+      <AnchorPane prefHeight="500.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <BorderPane prefHeight="200.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <Label alignment="CENTER" text="Profile" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="31.0" />
+                     </font>
+                  </Label>
+               </top>
+               <center>
+                  <VBox prefHeight="265.0" prefWidth="376.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <JFXTextField fx:id="txname" promptText="Full Name">
+                           <padding>
+                              <Insets bottom="15.0" left="50.0" right="50.0" top="15.0" />
+                           </padding>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txphone" layoutX="10.0" layoutY="10.0" promptText="Phone Number">
+                           <padding>
+                              <Insets bottom="15.0" left="50.0" right="50.0" top="15.0" />
+                           </padding>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txcin" layoutX="10.0" layoutY="57.0" promptText="CIN">
+                           <padding>
+                              <Insets bottom="15.0" left="50.0" right="50.0" top="15.0" />
+                           </padding>
+                        </JFXTextField>
+                        <JFXDatePicker fx:id="birthdate" prefHeight="25.0" prefWidth="407.0" promptText="Birth Date">
+                           <padding>
+                              <Insets bottom="15.0" left="50.0" right="50.0" top="15.0" />
+                           </padding>
+                        </JFXDatePicker>
+                        <HBox>
+                           <children>
+                              <JFXCheckBox fx:id="handicap" mnemonicParsing="false" text="Handicap">
+                                 <HBox.margin>
+                                    <Insets left="50.0" right="250.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                           </children>
+                        </HBox>
+                        <JFXButton alignment="TOP_CENTER" contentDisplay="TOP" minHeight="25.0" mnemonicParsing="false" onAction="#savedata" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: rgb(41,121,255);" text="Save " textFill="WHITE">
+                           <padding>
+                              <Insets left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets left="125.0" right="80.0" top="5.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+                     </BorderPane.margin>
+                  </VBox>
+               </center>
+               <left>
+                  <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@avatars/athlete.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton fx:id="updateavatar" maxWidth="169.0" minWidth="100.0" mnemonicParsing="false" onAction="#saveavatar" prefHeight="39.0" prefWidth="169.0" style="-fx-background-color: rgb(41,121,255);" text="Update Avatar" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                        </VBox>
+               </left>
+               <bottom>
+                  <HBox prefHeight="295.0" prefWidth="866.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <BorderPane prefHeight="280.0" prefWidth="400.0">
+                           <center>
+                              <LineChart fx:id="progress" title="Progress " BorderPane.alignment="CENTER">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                                 <BorderPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </BorderPane.margin>
+                              </LineChart>
+                           </center>
+                           <bottom>
+                              <JFXButton mnemonicParsing="false" onAction="#addnewprogress" prefHeight="39.0" prefWidth="259.0" style="-fx-background-color: rgb(41,121,255);" text="Add new Height and Weight" textFill="WHITE" BorderPane.alignment="CENTER">
+                                 <BorderPane.margin>
+                                    <Insets bottom="10.0" />
+                                 </BorderPane.margin>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                           </bottom>
+                        </BorderPane>
+                        <BorderPane prefHeight="300.0" prefWidth="400.0">
+                           <center>
+                              <BarChart fx:id="attendance" prefHeight="236.0" prefWidth="390.0" title="Attendance" BorderPane.alignment="CENTER">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                                 <BorderPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </BorderPane.margin>
+                              </BarChart>
+                           </center>
+                           <bottom>
+                              <JFXButton mnemonicParsing="false" onAction="#presentToday" prefHeight="39.0" prefWidth="157.0" style="-fx-background-color: rgb(41,121,255);" text="Present Today" textFill="WHITE" BorderPane.alignment="CENTER">
+                                 <BorderPane.margin>
+                                    <Insets bottom="10.0" />
+                                 </BorderPane.margin>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXButton>
+                           </bottom>
+                        </BorderPane>
+                     </children>
+                  </HBox>
+               </bottom>
+               <right>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox prefHeight="234.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label fx:id="membership" alignment="CENTER" contentDisplay="CENTER" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Membership">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="50.0" right="50.0" />
+                                 </padding>
+                              </Label>
+                              <JFXButton fx:id="setmembershipbu" minHeight="25.0" mnemonicParsing="false" onAction="#setmembership" text="Set Membership">
+                                 <VBox.margin>
+                                    <Insets left="80.0" right="50.0" top="15.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                              </JFXButton>
+                              <JFXToggleButton fx:id="paid" mnemonicParsing="false" text="Paid ">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="80.0" right="50.0" top="10.0" />
+                                 </VBox.margin>
+                              </JFXToggleButton>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </right>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

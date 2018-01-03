@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gym.Controllers.MembershipController">
+    <BorderPane prefHeight="600.0" prefWidth="809.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <center>
+            <TableView fx:id="memberships" onMouseClicked="#rowClickeed" prefHeight="269.0" prefWidth="809.0" BorderPane.alignment="CENTER">
+                <columns>
+                    <TableColumn fx:id="membership_id" style="-fx-alignment: CENTER;" text="#" />
+                    <TableColumn fx:id="membership_name" style="-fx-alignment: CENTER;" text="Membership" />
+                    <TableColumn fx:id="membership_weeks" style="-fx-alignment: CENTER;" text="weeks" />
+                    <TableColumn fx:id="membership_days" style="-fx-alignment: CENTER;" text="days" />
+                    <TableColumn fx:id="membership_price" style="-fx-alignment: CENTER;" text="price" />
+                </columns>
+            </TableView>
+        </center>
+        <top>
+            <HBox prefHeight="73.0" prefWidth="809.0" BorderPane.alignment="CENTER">
+                <children>
+                    <Label alignment="CENTER" prefHeight="75.0" prefWidth="809.0" text="Memberships">
+                        <font>
+                            <Font name="System Bold" size="25.0" />
+                        </font>
+                    </Label>
+                </children>
+            </HBox>
+        </top>
+        <right>
+            <VBox prefHeight="460.0" prefWidth="220.0" BorderPane.alignment="CENTER">
+                <children>
+                    <VBox prefHeight="276.0" prefWidth="600.0">
+                  <children>
+                     <Label fx:id="membership_label" alignment="CENTER" prefHeight="75.0" prefWidth="809.0" text="New Membership">
+                        <font>
+                           <Font name="System Bold" size="25.0" />
+                        </font>
+                     </Label>
+                     <HBox prefHeight="50.0">
+                        <children>
+                           <JFXTextField fx:id="txName" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="300.0" promptText="Membership Name">
+                              <HBox.margin>
+                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                              </HBox.margin></JFXTextField>
+                        </children>
+                        <VBox.margin>
+                           <Insets top="50.0" />
+                        </VBox.margin>
+                     </HBox>
+                     <HBox layoutX="10.0" layoutY="10.0" prefHeight="50.0">
+                        <children>
+                           <JFXTextField fx:id="txWeeks" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="300.0" promptText="Number of Weeks">
+                              <HBox.margin>
+                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                              </HBox.margin>
+                           </JFXTextField>
+                        </children>
+                     </HBox>
+                     <HBox layoutX="10.0" layoutY="10.0" prefHeight="50.0">
+                        <children>
+                           <JFXTextField fx:id="txDays" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="300.0" promptText="Number of Days">
+                              <HBox.margin>
+                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                              </HBox.margin>
+                           </JFXTextField>
+                        </children>
+                     </HBox>
+                     <HBox layoutX="10.0" layoutY="60.0" prefHeight="50.0">
+                        <children>
+                           <JFXTextField fx:id="txPrice" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="300.0" promptText="Price">
+                              <HBox.margin>
+                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                              </HBox.margin>
+                           </JFXTextField>
+                        </children>
+                     </HBox>
+                  </children>
+                  <VBox.margin>
+                     <Insets bottom="15.0" />
+                  </VBox.margin></VBox>
+                    <HBox prefHeight="67.0" prefWidth="809.0">
+                        <children>
+                     <BorderPane prefHeight="200.0" prefWidth="220.0">
+                        <right>
+                                  <AnchorPane BorderPane.alignment="CENTER">
+                                      <children>
+                                 <VBox prefWidth="100.0">
+                                    <children>
+                                                <JFXButton fx:id="removeMembershipbu" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#removeMembership" prefWidth="100.0">
+                                                    <graphic>
+                                                        <FontAwesomeIconView glyphName="TRASH" size="25" strokeType="OUTSIDE" strokeWidth="0.0" />
+                                                    </graphic>
+                                                </JFXButton>
+                                       <Label text="Remove">
+                                          <VBox.margin>
+                                             <Insets left="28.0" />
+                                          </VBox.margin>
+                                       </Label>
+                                    </children>
+                                 </VBox>
+                                      </children>
+                                  </AnchorPane>
+                        </right>
+                        <left>
+                                  <AnchorPane BorderPane.alignment="CENTER">
+                                      <children>
+                                 <VBox prefWidth="100.0">
+                                    <children>
+                                                <JFXButton fx:id="saveMembershipbu" contentDisplay="GRAPHIC_ONLY" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#saveMembership" prefWidth="100.0" text="Button">
+                                                    <graphic>
+                                                        <FontAwesomeIconView glyphName="CHECK" size="30" strokeType="OUTSIDE" strokeWidth="0.0" />
+                                                    </graphic>
+                                                </JFXButton>
+                                       <Label alignment="CENTER" text="Save">
+                                          <VBox.margin>
+                                             <Insets left="35.0" />
+                                          </VBox.margin>
+                                       </Label>
+                                    </children>
+                                 </VBox>
+                                      </children>
+                                  </AnchorPane>
+                        </left>
+                        <bottom>
+                           <AnchorPane BorderPane.alignment="CENTER">
+                              <children>
+                                 <HBox>
+                                    <children>
+                                       <VBox prefWidth="100.0">
+                                          <children>
+                                             <JFXButton fx:id="newMembershipbu" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#newMembership" prefHeight="50.0" prefWidth="100.0" text="Button">
+                                                <graphic>
+                                                   <FontAwesomeIconView glyphName="PLUS" size="30" strokeType="OUTSIDE" strokeWidth="0.0" />
+                                                </graphic>
+                                             </JFXButton>
+                                             <Label text="New Membership">
+                                                <padding>
+                                                   <Insets left="5.0" />
+                                                </padding>
+                                             </Label>
+                                          </children>
+                                          <HBox.margin>
+                                             <Insets left="60.0" right="60.0" />
+                                          </HBox.margin>
+                                       </VBox>
+                                    </children>
+                                 </HBox>
+                              </children>
+                           </AnchorPane>
+                        </bottom>
+                     </BorderPane>
+                        </children>
+                    </HBox>
+
+                </children>
+            </VBox>
+        </right>
+    </BorderPane>
+</AnchorPane>

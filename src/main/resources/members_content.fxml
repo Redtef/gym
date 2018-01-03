@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gym.Controllers.members.MembersController">
+    <BorderPane prefHeight="600.0" prefWidth="809.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <center>
+            <TableView fx:id="members" onMouseClicked="#onMouseClicked" prefHeight="269.0" prefWidth="809.0" BorderPane.alignment="CENTER">
+                <columns>
+                    <TableColumn fx:id="member_id" style="-fx-alignment: CENTER;" text="#" />
+               <TableColumn fx:id="membre_avatar" style="-fx-alignment: CENTER;" text="Avatar" />
+                    <TableColumn fx:id="member_name" style="-fx-alignment: CENTER;" text="Name" />
+                    <TableColumn fx:id="member_birthdate" style="-fx-alignment: CENTER;" text="Age" />
+                    <TableColumn fx:id="membre_cin" style="-fx-alignment: CENTER;" text="CIN" />
+                    <TableColumn fx:id="handicape" style="-fx-alignment: CENTER;" text="Handicape" />
+                    <TableColumn fx:id="membership_name" style="-fx-alignment: CENTER;" text="Membership" />
+                </columns>
+            <BorderPane.margin>
+               <Insets top="10.0" />
+            </BorderPane.margin>
+            </TableView>
+        </center>
+        <top>
+            <VBox BorderPane.alignment="CENTER">
+                <children>
+                    <Label alignment="CENTER" prefHeight="75.0" prefWidth="809.0" text="Members">
+                        <font>
+                            <Font name="System Bold" size="25.0" />
+                        </font>
+                    </Label>
+                    <HBox prefHeight="47.0" prefWidth="809.0">
+                        <children>
+                            <JFXButton alignment="CENTER" mnemonicParsing="false" onAction="#addnewmember" prefHeight="50.0" prefWidth="150.0" text="Add New Membre">
+                                <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                </HBox.margin>
+                                <graphic>
+                                    <FontAwesomeIconView glyphName="PLUS" size="20" strokeType="OUTSIDE" strokeWidth="0.0" />
+                                </graphic>
+                            </JFXButton>
+                            <JFXButton fx:id="viewprofilebu" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#viewprofile" prefHeight="50.0" prefWidth="150.0" text="View Profil">
+                                <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                </HBox.margin>
+                                <graphic>
+                                    <FontAwesomeIconView glyphName="EYE" size="20" strokeType="OUTSIDE" strokeWidth="0.0" />
+                                </graphic>
+                            </JFXButton>
+                     <JFXButton fx:id="banbu" alignment="CENTER" layoutX="60.0" layoutY="10.0" mnemonicParsing="false" onAction="#banmember" prefHeight="50.0" prefWidth="150.0" text="Ban">
+                        <graphic>
+                           <FontAwesomeIconView glyphName="BAN" size="20" strokeType="OUTSIDE" strokeWidth="0.0" />
+                        </graphic>
+                        <HBox.margin>
+                           <Insets left="10.0" right="10.0" />
+                        </HBox.margin>
+                     </JFXButton>
+                            <JFXButton alignment="CENTER" layoutX="109.0" layoutY="10.0" mnemonicParsing="false" onAction="#refresh" prefHeight="50.0" prefWidth="150.0" text="Refresh">
+                                <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                </HBox.margin>
+                                <graphic>
+                                    <FontAwesomeIconView glyphName="REFRESH" size="20" strokeType="OUTSIDE" strokeWidth="0.0" />
+                                </graphic>
+                            </JFXButton>
+                            <JFXButton alignment="CENTER" layoutX="507.0" layoutY="10.0" mnemonicParsing="false" onAction="#print" prefHeight="50.0" prefWidth="150.0" text="Print">
+                                <HBox.margin>
+                                    <Insets left="10.0" right="25.0" />
+                                </HBox.margin>
+                                <graphic>
+                                    <FontAwesomeIconView glyphName="PRINT" size="20" strokeType="OUTSIDE" strokeWidth="0.0" />
+                                </graphic>
+                            </JFXButton>
+                        </children>
+                    </HBox>
+               <JFXTextField fx:id="searchInput" alignment="CENTER" onKeyPressed="#searchByName" promptText="Search By Name">
+                  <VBox.margin>
+                     <Insets bottom="10.0" top="10.0" />
+                  </VBox.margin>
+                  <padding>
+                     <Insets bottom="10.0" left="250.0" right="250.0" top="10.0" />
+                  </padding>
+               </JFXTextField>
+                </children>
+            </VBox>
+        </top>
+    </BorderPane>
+</AnchorPane>

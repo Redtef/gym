@@ -2,10 +2,11 @@ package gym.model;
 
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 
-public class Membership extends RecursiveTreeObject<Membership> {
-
+public class Membership {
 
 
     private Integer id;
@@ -15,7 +16,8 @@ public class Membership extends RecursiveTreeObject<Membership> {
     private Double price;
     private Date start_at;
     private Date end_at;
-    private Payment payment;
+    private Boolean paid = false;
+    private Date payment_date;
 
     public Membership(Integer id, String name, Integer weeks, Integer days, Double price) {
         this.id = id;
@@ -23,6 +25,44 @@ public class Membership extends RecursiveTreeObject<Membership> {
         this.weeks = weeks;
         this.days = days;
         this.price = price;
+    }
+
+    public Membership(Integer id, String name, String weeks, String days, String price) {
+        this.id = id;
+        this.name = name;
+        this.weeks = Integer.valueOf(weeks);
+        this.days = Integer.valueOf(days);
+        this.price = Double.valueOf(price);
+    }
+
+    public Membership(ResultSet rs) {
+        try {
+            this.id = rs.getInt("id");
+            this.name = rs.getString("MEMBERSHIP_NAME");
+            this.weeks = rs.getInt("weeks");
+            this.days = rs.getInt("days");
+            this.price = rs.getDouble("price");
+            this.paid=rs.getBoolean("paid");
+            this.start_at=rs.getDate("booking_date");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Boolean getPaid() {
+        return paid;
+    }
+
+    public void setPaid(Boolean paid) {
+        this.paid = paid;
+    }
+
+    public Date getPayment_date() {
+        return payment_date;
+    }
+
+    public void setPayment_date(Date payment_date) {
+        this.payment_date = payment_date;
     }
 
     public void setId(Integer id) {
@@ -73,9 +113,6 @@ public class Membership extends RecursiveTreeObject<Membership> {
         return end_at;
     }
 
-    public Payment getPayment() {
-        return payment;
-    }
 
     public void setStart_at(Date start_at) {
         this.start_at = start_at;
@@ -85,8 +122,9 @@ public class Membership extends RecursiveTreeObject<Membership> {
         this.end_at = end_at;
     }
 
-    public void setPayment(Payment payment) {
-        this.payment = payment;
-    }
 
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }

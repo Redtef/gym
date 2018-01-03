@@ -17,5 +17,6 @@ dependencies {
     compile 'de.jensd:fontawesomefx-emojione:2.2.7-2'
     compile 'de.jensd:fontawesomefx-fontawesome:4.7.0-5'
     compile fileTree(dir: 'libs', include: ['*.jar'])
-
+    // https://mvnrepository.com/artifact/commons-io/commons-io
+    compile group: 'commons-io', name: 'commons-io', version: '2.4'
 }
